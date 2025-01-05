@@ -1,0 +1,221 @@
+/* General Reset */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f5;
+}
+
+/* Gavel Container */
+.gavel {
+    position: relative;
+    width: 150px;
+    height: 200px;
+}
+
+/* Hammer Handle */
+.hammer-handle {
+    position: absolute;
+    width: 12px;
+    height: 130px;
+    background: #8b4513;
+    top: 20px;
+    left: -30%; /* Center the handle horizontally */
+    margin-left: -6px; /* Offset by half the width of the handle to center it */
+    border-radius: 6px;
+    transform-origin: bottom center;
+    animation: tiltAndStrike 2s infinite ease-in-out;
+}
+
+/* Hammer Head with Wooden Finish and Border */
+.hammer-head {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(45deg, #8b4513, #a0522d, #8b4513); /* Wooden finish */
+    border-radius: 5px;
+    top: 0;
+    left: 30%; /* Center the hammer head */
+    margin-left: -30px; /* Offset by half the width of the hammer head to center it */
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.3);  */
+    border: 4px solid transparent;
+    border-radius: 25%;
+    background-clip: content-box;
+    position: relative;
+}
+
+/* Border with gradient effect */
+.hammer-head:before {
+    content: '';
+    position: absolute;
+    top: 4px;  /* Makes the border start inside the hammer */
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: linear-gradient(45deg, #8b4513, #d2691e, #8b4513); /* Border effect */
+    border-radius: 3px; /* Rounded corners for the border */
+}
+
+/* Table */
+.table {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background: linear-gradient(135deg, #a52a2a, #8b0000);
+    border-radius: 10px;
+    top: 180px;
+    left: 15px;
+    transform: rotate(0deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Particle Effects */
+.ls-particles {
+    position: absolute;
+    width: 1px;
+    height: 2px;
+    background-color: rgba(51, 51, 51, 0);
+    border-radius: 50%;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+.ls-part-1 {
+    top: 165px;
+    left: 78px;
+    animation: particles1 2s infinite;
+}
+
+.ls-part-2 {
+    top: 170px;
+    left: 80px;
+    animation: particles2 2s infinite;
+}
+
+.ls-part-3 {
+    top: 160px;
+    left: 82px;
+    animation: particles3 2s infinite;
+}
+
+.ls-part-4 {
+    top: 168px;
+    left: 76px;
+    animation: particles4 2s infinite;
+}
+
+.ls-part-5 {
+    top: 162px;
+    left: 80px;
+    animation: particles5 2s infinite;
+}
+
+/* Keyframe Animations for Particles */
+@keyframes particles1 {
+    0% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(35deg) translateY(0);
+    }
+    64% {
+        background-color: rgba(51, 51, 51, 1);
+    }
+    100% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(35deg) translateY(-30px);
+    }
+}
+
+@keyframes particles2 {
+    0% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(-65deg) translateY(0);
+    }
+    64% {
+        background-color: rgba(51, 51, 51, 1);
+    }
+    100% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(-65deg) translateY(-40px);
+    }
+}
+
+@keyframes particles3 {
+    0% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(-75deg) translateY(0);
+    }
+    64% {
+        background-color: rgba(51, 51, 51, 1);
+    }
+    100% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(-75deg) translateY(-35px);
+    }
+}
+
+@keyframes particles4 {
+    0% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(-25deg) translateY(0);
+    }
+    64% {
+        background-color: rgba(51, 51, 51, 1);
+    }
+    100% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(-25deg) translateY(-30px);
+    }
+}
+
+@keyframes particles5 {
+    0% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(65deg) translateY(0);
+    }
+    64% {
+        background-color: rgba(51, 51, 51, 1);
+    }
+    100% {
+        background-color: rgba(51, 51, 51, 0);
+        transform: rotateZ(65deg) translateY(-35px);
+    }
+}
+
+/* Keyframe Animations for Hammer Tilting and Striking */
+@keyframes tiltAndStrike {
+    0%, 100% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+}
+
+/* Golden Spark Animation */
+.golden-spark {
+    position: absolute;
+    top: 170px;
+    left: 75px;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 223, 0, 1); /* Golden color */
+    border-radius: 50%;
+    animation: sparkAnimation 1s ease-in-out forwards;
+}
+
+@keyframes sparkAnimation {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2) translateY(-10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) translateY(-20px);
+        opacity: 0;
+    }
+}
